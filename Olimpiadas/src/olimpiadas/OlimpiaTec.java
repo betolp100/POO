@@ -30,8 +30,8 @@ public class OlimpiaTec {
         this.events.add(event);
         return true;
     }
-    //We remove a participant from the list
-    public boolean removeOlimpiaTec(OlimpiaTec event){
+    //We remove an event from the list
+    public boolean removeEvent(OlimpiaTec event){
         for(OlimpiaTec caso : this.events) {
             if(caso.getName().equalsIgnoreCase(event.getName())){ //También en esta parte, me ayudó roberto a darle forma al programa.
                 this.events.remove(caso);
@@ -40,7 +40,7 @@ public class OlimpiaTec {
         return false;
     }
     
-    public String getOlimpiaTec() { //We obtain all the participants that are in the array.
+    public String getEvent() { //We enlist and obtain all events in one array.
         String list= " Events = ";
         for (OlimpiaTec caso : this.events) {
             list += caso.getName()+",";
@@ -49,12 +49,12 @@ public class OlimpiaTec {
         return list;
     }
      
-    public String getInscripcion(){ //In case that we dont have a participatant but no an event, we use this getter.
+    public String getParticipants(){
         return " Name = "+this.name+", Id = "+this.id;
     }
     
     @Override
-    public String toString(){ //In case that we have a participant and an event, we use this string.
-        return " Name = "+this.name+", Id = "+this.id+", "+getOlimpiaTec();
+    public String toString(){ //We obtain all participants and events in the
+        return " OlimpiaTec ["+getEvent()+", "+getParticipants();
     }
 }
